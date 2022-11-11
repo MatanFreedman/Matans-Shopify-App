@@ -1,23 +1,24 @@
-# fly.toml file generated for matans-test-app-flyio on 2022-11-11T10:00:55-05:00
-
 app = "matans-test-app-flyio"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
 
 [env]
-PORT = "8081"
-HOST = "https://matans-test-app-flyio.fly.dev"
-SHOPIFY_API_KEY = "2dc898dce5d82bb6db3908c13766fc8e"
-SCOPES = "write_products,read_discounts"
+  HOST = "https://matans-test-app-flyio.fly.dev"
+  PORT = "8081"
+  SCOPES = "write_products,read_discounts"
+  SHOPIFY_API_KEY = "2dc898dce5d82bb6db3908c13766fc8e"
 
-[mounts]
-  source="database.sqlite"
-  destination="/mnt/data"
+[build.args]
+  SHOPIFY_API_KEY="2dc898dce5d82bb6db3908c13766fc8e"
 
 [experimental]
   allowed_public_ports = []
   auto_rollback = true
+
+[mounts]
+  destination = "/data"
+  source = "data"
 
 [[services]]
   http_checks = []
