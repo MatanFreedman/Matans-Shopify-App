@@ -12,7 +12,7 @@ SHOPIFY_API_KEY = "2dc898dce5d82bb6db3908c13766fc8e"
 SCOPES = "write_products,read_discounts"
 
 [mounts]
-  source="data"
+  source="database.sqlite"
   destination="/mnt/data"
 
 [experimental]
