@@ -8,7 +8,7 @@ env:
   SHOPIFY_API_KEY_DEV: ${{ secrets.SHOPIFY_API_KEY_DEV }}
 jobs:
   deploy:
-      name: Deploy dev app
+      name: Deploy Dev App
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v3
