@@ -280,12 +280,12 @@ export function QRCodeForm({ QRCode: InitialQRCode }) {
               fullWidth
             />
             <FormLayout>
-              <Card sectioned title="Title">
+              <Card sectioned title="Title: TEST CHANGE #1 NOV 14">
                 <TextField
                   {...title}
                   label="Title"
                   labelHidden
-                  helpText="Only store staff can see this title"
+                  helpText="Only store staff can see this title."
                 />
               </Card>
 
