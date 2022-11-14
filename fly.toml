@@ -7,7 +7,6 @@ processes = []
 
 [env]
   PORT="8081"
-  HOST="https://matans-test-app-dev.fly.dev"
   SCOPES="write_products,read_discounts"
 
 [mounts]
