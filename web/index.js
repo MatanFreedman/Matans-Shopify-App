@@ -25,7 +25,7 @@ const PORT = parseInt(process.env.BACKEND_PORT || process.env.PORT, 10);
 const DEV_INDEX_PATH = `${process.cwd()}/frontend/`;
 const PROD_INDEX_PATH = `${process.cwd()}/frontend/dist/`;
 
-const dbFile = join(process.cwd(), "data/database.sqlite");
+const dbFile = join(process.cwd(), "../data/database.sqlite");
 const sessionDb = new Shopify.Session.SQLiteSessionStorage(dbFile);
 // Initialize SQLite DB
 QRCodesDB.db = sessionDb.db;
