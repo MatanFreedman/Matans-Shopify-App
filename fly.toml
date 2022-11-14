@@ -10,9 +10,6 @@ processes = []
   HOST="https://matans-test-app-dev.fly.dev"
   SCOPES="write_products,read_discounts"
 
-[build.args]
-  SHOPIFY_API_KEY="038e3550708ead2c274bee938f2e94ea"
-
 [mounts]
   destination = "/data"
   source = "data"

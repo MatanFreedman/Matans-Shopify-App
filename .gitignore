@@ -26,4 +26,3 @@ extensions/*/build
 
 # Node library SQLite database
 data/*
-fly.toml
