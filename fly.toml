@@ -1,6 +1,5 @@
 # fly.toml file generated for matans-test-app-dev on 2022-11-14T12:09:55-05:00
 
-app = "matans-test-app-dev"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
