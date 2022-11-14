@@ -5,7 +5,7 @@ on:
       - dev
 env:
   FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-  SHOPIFY_API_KEY_DEV: ${{ secrets.SHOPIFY_API_KEY_DEV }}
+  SHOPIFY_API_KEY: ${{ secrets.SHOPIFY_API_KEY_DEV }}
   APP_NAME: "matans-test-app-dev"
   HOST: "https://matans-test-app-dev.fly.dev"
 jobs:
@@ -15,4 +15,4 @@ jobs:
       steps:
         - uses: actions/checkout@v3
         - uses: superfly/flyctl-actions/setup-flyctl@master
-        - run: flyctl deploy --remote-only --build-arg SHOPIFY_API_KEY=${{secrets.SHOPIFY_API_KEY_DEV}} -a ${{APP_NAME}}
+        - run: flyctl deploy --remote-only --build-arg SHOPIFY_API_KEY=$SHOPIFY_API_KEY -a $APP_NAME -e HOST=$HOST
