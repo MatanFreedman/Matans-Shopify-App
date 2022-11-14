@@ -5,7 +5,7 @@ on:
       - dev
 env:
   FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-  SHOPIFY_API_KEY_DEV: ${{SHOPIFY_API_KEY_DEV}}
+  SHOPIFY_API_KEY_DEV: ${{ secrets.SHOPIFY_API_KEY_DEV }}
 jobs:
   deploy:
       name: Deploy dev app
