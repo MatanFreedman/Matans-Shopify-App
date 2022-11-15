@@ -6,7 +6,7 @@ processes = []
 
 [env]
   PORT="8081"
-  SCOPES="write_products,read_discounts"
+  SCOPES="write_products,read_discounts,read_products"
 
 [mounts]
   destination = "/data"
