@@ -16,6 +16,10 @@ import {
   formatQrCodeResponse,
 } from "../helpers/qr-codes.js";
 
+import {
+  sendFlowTriggerMutation
+} from "../helpers/flow-triggers.js"
+
 const DISCOUNTS_QUERY = `
   query discounts($first: Int!) {
     codeDiscountNodes(first: $first) {
@@ -99,6 +103,15 @@ export default function applyQrCodeApiEndpoints(app) {
       const response = await formatQrCodeResponse(req, res, [
         await QRCodesDB.read(id),
       ]);
+
+      // Send trigger mutation to Shopify GraphQL Admin API:
+      const triggerId = "b7cc8e0a-1f80-40a6-97bd-9b25b3056bfc"
+      const properties = {
+        product_id: parseInt(req.body.productId.match(/[0-9]+$/)[0]),
+        "QR Code Name": req.body.title,
+      }
+      sendFlowTriggerMutation(req, res, triggerId, properties)
+
       res.status(201).send(response[0]);
     } catch (error) {
       res.status(500).send(error.message);
