@@ -104,13 +104,13 @@ export default function applyQrCodeApiEndpoints(app) {
         await QRCodesDB.read(id),
       ]);
 
-      // Send trigger mutation to Shopify GraphQL Admin API:
+      /* Send trigger mutation to Shopify GraphQL Admin API: */
       const triggerId = "b7cc8e0a-1f80-40a6-97bd-9b25b3056bfc"
-      const properties = {
+      const triggerProperties = {
         product_id: parseInt(req.body.productId.match(/[0-9]+$/)[0]),
         "QR Code Name": req.body.title,
       }
-      sendFlowTriggerMutation(req, res, triggerId, properties)
+      sendFlowTriggerMutation(req, res, triggerId, triggerProperties)
 
       res.status(201).send(response[0]);
     } catch (error) {
